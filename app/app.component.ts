@@ -9,7 +9,7 @@ import { CounterIncrease } from './store';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public counter$ = this.store.select<number>('count');
+  public counter$ = this.store.select<number>('counter');
 
   public get counter() {
     let res: number;

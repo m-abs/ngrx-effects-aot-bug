@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const commonConfig = require('./webpack.common.config.js');
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,7 +11,7 @@ module.exports = function(env) {
       'app.jit': './app/bootstrap.jit.ts'
     },
     output: {
-      path: './dist/jit'
+      path: path.resolve(__dirname, './dist/jit'),
     },
     plugins: [
       new HtmlWebpackPlugin({

@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const commonConfig = require('./webpack.common.config.js');
 const webpackMerge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,7 +11,7 @@ module.exports = function(env) {
       'app.aot': './app/bootstrap.aot.ts'
     },
     output: {
-      path: './dist/aot'
+      path: path.resolve(__dirname, './dist/aot'),
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -19,7 +20,7 @@ module.exports = function(env) {
       })
     ],
     devServer: {
-      contentBase: 'dist/aot'
+      contentBase: 'dist/aot',
     },
     bail: true
   });
