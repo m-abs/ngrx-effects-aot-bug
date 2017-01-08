@@ -1,0 +1,9 @@
+<article>
+  <header>
+    <h1 class="h1 text-center">Tap the button</h1>
+  </header>
+  <section>
+    <button (click)="onTap()">TAP ME: {{ counter$ | async }}</button>
+    <div>{{ message }}</div>
+  </section>
+</article>
